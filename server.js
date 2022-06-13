@@ -20,20 +20,12 @@ app.set('view engine', 'ejs');
 
 // Mount routes
 app.get('/', function(req,res) {
-  res.send('<h1>hello, all my friends</h>')
+  res.redirect('/home');
 });
 
 app.get('/home', function(req,res){
   res.render('home');
 });
-
-app.get('/cars', function(req, res) {
-	res.send('Here is a list of my cars...')
-})
-
-app.post('/cars', function(req, res) {
-	res.send('Thanks for the new car!')
-})
 
 app.get('/todos', function(req, res) {
   res.render('todos/index', {
