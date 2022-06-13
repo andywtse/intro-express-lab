@@ -11,8 +11,10 @@
   <ul>
     <% students.forEach(student => { %>
       <li>
-				<%= student.text %> 
+				<%= student.name %> 
 				- 
+        <%= student._id %>
+        - 
 				<%= student.horse ? 'I like horses' : 'I do not like horses' %>
 			</li>
     <% }) %>
