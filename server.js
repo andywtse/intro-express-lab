@@ -1,6 +1,7 @@
 
-import express from 'express'
+import express from 'express';
 import { students } from './data/students-data.js';
+import { movies } from './data/movies-data.js';
 
 
 const app = express();
@@ -13,18 +14,24 @@ app.set('view engine', 'ejs');
 
 
 // Mount routes
-app.get('/', function(req,res) {
-  res.redirect('/home');
+app.get('/', function (req, res) {
+  res.render('home');
 });
 
-app.get('/students', function(req, res) {
+app.get('/students', function (req, res) {
   res.render('students/index', {
-    students:students
+    students: students
   })
+});
+
+app.get('/movies', function (req, res) {
+  res.render('movies/index', {
+    movies: movies
+  });
 })
 
 // Tell the app to listen on port 3000
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('Listening on port 3000')
-})
+});
